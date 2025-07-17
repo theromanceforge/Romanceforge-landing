@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Your Story | The Romance Forge</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Romance Forge</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato&display=swap" rel="stylesheet">
   <style>
@@ -16,65 +16,71 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-black via-gray-900 to-[#2d1e2f] min-h-screen text-gray-100">
+<body class="text-gray-100 bg-black min-h-screen">
 
-  <div class="max-w-3xl mx-auto py-12 px-6">
-    <h1 class="text-4xl text-rose-500 font-bold text-center mb-10">Customize Your Romantic Adventure</h1>
+  <!-- Hero Section with Background Image -->
+  <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1606248897732-4666ec3f2b6b?auto=format&fit=crop&w=1600&q=80');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative text-center px-6 z-10">
+      <h1 class="text-6xl text-rose-400 mb-6 tracking-wide drop-shadow-lg">The Romance Forge</h1>
+      <p class="text-xl max-w-xl mx-auto text-gray-200 drop-shadow">A 30-minute romantic adventure. Choose your tone, your lover, and your fate — then dive in.</p>
+      <a href="setup.html" class="mt-8 inline-block bg-rose-700 text-white px-6 py-3 rounded-full hover:bg-rose-600 transition-all shadow-lg">Start Your Story</a>
+    </div>
+  </section>
 
-    <form class="space-y-6 bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg">
+  <!-- How It Works -->
+  <section class="py-16 px-8 bg-gray-950 bg-opacity-90">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
       <div>
-        <label class="block text-lg font-medium text-rose-400">Your Name</label>
-        <input type="text" name="protagonist" placeholder="e.g., Alex" class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+        <h2 class="text-2xl text-rose-400 mb-2">1. Choose</h2>
+        <p class="text-gray-300">Select your setting, tone, and romantic preferences.</p>
       </div>
-
       <div>
-        <label class="block text-lg font-medium text-rose-400">Partner Gender</label>
-        <select name="partner_gender" class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
-          <option>Female</option>
-          <option>Male</option>
-          <option>Nonbinary</option>
-          <option>Surprise me</option>
-        </select>
+        <h2 class="text-2xl text-rose-400 mb-2">2. Explore</h2>
+        <p class="text-gray-300">Let our AI guide you through an emotionally rich, personalized journey.</p>
       </div>
-
       <div>
-        <label class="block text-lg font-medium text-rose-400">Setting</label>
-        <select name="setting" class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
-          <option>Tropical Island</option>
-          <option>Luxury Hotel</option>
-          <option>College Campus</option>
-          <option>Fantasy Kingdom</option>
-          <option>Modern City</option>
-          <option>Space Station</option>
-        </select>
+        <h2 class="text-2xl text-rose-400 mb-2">3. Replay</h2>
+        <p class="text-gray-300">Try again with new paths, new desires, and endless possibilities.</p>
       </div>
+    </div>
+  </section>
 
-      <div>
-        <label class="block text-lg font-medium text-rose-400">Tone</label>
-        <select name="tone" class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
-          <option>Sweet</option>
-          <option>Spicy</option>
-          <option>Hot</option>
-          <option>Dark</option>
-        </select>
-      </div>
+  <!-- Features -->
+  <section class="text-center px-6 py-16 bg-[#2d1e2f]">
+    <h2 class="text-3xl text-rose-400 mb-6">Why RomanceForge?</h2>
+    <ul class="max-w-2xl mx-auto space-y-4 text-gray-200">
+      <li>❤️ Adjustable tone: Sweet, spicy, or full of heat</li>
+      <li>🗺️ Choose your setting and character types</li>
+      <li>🧠 Powered by AI — your story is one of a kind</li>
+      <li>🔁 Unlimited replays with new outcomes</li>
+    </ul>
+  </section>
 
-      <div>
-        <label class="block text-lg font-medium text-rose-400">Genre</label>
-        <select name="genre" class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
-          <option>Pure Romance</option>
-          <option>Action Romance</option>
-          <option>Fantasy Romance</option>
-          <option>Drama-Heavy</option>
-          <option>Comedy-Flirty</option>
-        </select>
-      </div>
+  <!-- Contact Us -->
+  <section class="px-6 py-16 bg-gray-950">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl text-rose-400 text-center mb-6">Contact Us</h2>
+      <form action="mailto:theromanceforge@gmail.com" method="POST" enctype="text/plain" class="space-y-6 bg-gray-900 bg-opacity-80 p-6 rounded-lg shadow">
+        <div>
+          <label class="block text-lg font-medium text-rose-400">Your Email</label>
+          <input type="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+        </div>
+        <div>
+          <label class="block text-lg font-medium text-rose-400">Your Message</label>
+          <textarea name="message" rows="5" required class="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-rose-500 focus:border-rose-500"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-rose-700 text-white px-6 py-3 rounded-full hover:bg-rose-600 transition-all shadow-lg">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-      <div class="pt-8 text-center">
-        <button type="submit" class="bg-rose-700 text-white px-6 py-3 rounded-full hover:bg-rose-600 transition-all shadow-lg">Begin Adventure</button>
-      </div>
-    </form>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-6">
+    <p class="text-sm">&copy; 2025 The Romance Forge. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
