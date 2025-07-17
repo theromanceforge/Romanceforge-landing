@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Your Story | The Romance Forge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-b from-rose-50 to-pink-100 min-h-screen text-gray-800">
+
+  <div class="max-w-3xl mx-auto py-12 px-6">
+    <h1 class="text-4xl text-rose-800 font-bold text-center mb-8">Customize Your Romantic Adventure</h1>
+
+    <form class="space-y-6">
+      <div>
+        <label class="block text-lg font-medium text-rose-700">Your Name</label>
+        <input type="text" name="protagonist" placeholder="e.g., Alex" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium text-rose-700">Partner Gender</label>
+        <select name="partner_gender" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+          <option>Female</option>
+          <option>Male</option>
+          <option>Nonbinary</option>
+          <option>Surprise me</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium text-rose-700">Setting</label>
+        <select name="setting" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+          <option>Tropical Island</option>
+          <option>Luxury Hotel</option>
+          <option>College Campus</option>
+          <option>Fantasy Kingdom</option>
+          <option>Modern City</option>
+          <option>Space Station</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium text-rose-700">Tone</label>
+        <select name="tone" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+          <option>Sweet</option>
+          <option>Spicy</option>
+          <option>Hot</option>
+          <option>Dark</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium text-rose-700">Genre</label>
+        <select name="genre" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-rose-500 focus:border-rose-500">
+          <option>Pure Romance</option>
+          <option>Action Romance</option>
+          <option>Fantasy Romance</option>
+          <option>Drama-Heavy</option>
+          <option>Comedy-Flirty</option>
+        </select>
+      </div>
+
+      <div class="pt-6 text-center">
+        <button type="submit" class="bg-rose-700 text-white px-6 py-3 rounded-full hover:bg-rose-800 transition">Begin Adventure</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
