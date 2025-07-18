@@ -1,10 +1,106 @@
 const storyTree = {
   "start": {
-    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\n\nThe war-torn city of Valthorne sprawled beneath a gunmetal sky, its once-proud skyline now a jagged ruin pierced by columns of smoke. The relentless thunder of artillery had echoed for three years since the conflict erupted in 2022, a constant reminder of the devastation that surrounded me. The air carried the acrid scent of gunpowder, mingled with the distant groans of collapsing buildings and the chill of a winter that refused to relent.\n\n\nI, a seasoned soldier and former reconnaissance officer, crouched behind a crumbling wall in the shattered district of Oldtown. The weight of my battered rifle pressed heavily against my shoulder, its cold metal a stark contrast to the warmth of memories that lingered. The despair of a population reduced to shadows hung thick, their silent pleas etched into the rubble around me.\n\n\nI once led an elite unit, forging bonds of trust and love with you, my second-in-command, until a mission to expose a traitor within our ranks went catastrophically wrong, scattering us across the battlefield and burying our romance under the weight of survival. That mission, launched in the spring of 2023, ended in betrayal, leaving me to wonder if I’d ever see you again amidst the chaos.\n\n\nThen you appeared, emerging from the choking haze that cloaked Valthorne’s ruins. Your uniform hung tattered and blood-stained, your face streaked with dirt and a resolve hardened by years of relentless fighting. The sight of you stirred something deep within me, a mix of relief and pain I couldn’t suppress.\n\n\nYour eyes locked with mine, a flicker of recognition cutting through the war’s chaos. It rekindled memories of stolen moments—your laughter echoing in a quiet bunker, your gentle touch during a rare ceasefire in the fall of 2023, the love we buried to protect our unit from further division.\n\n\n\"[MyName],\" you whispered, your voice hoarse from shouting orders, stepping closer despite the whistle of bullets overhead.\n\n\"I thought you were dead.\"\n\n\nI froze, my heart pounding as those memories flooded back, each one a dagger of longing and regret. The weight of our past pressed down, urging me to reach out yet hold back.\n\n\n\"Not yet,\" I replied, my voice tight with emotion.\n\n\"But we’re both running out of time, with the enemy closing in and the truth still hidden beneath this war’s ashes.\"\n\n\nYou nodded, your gaze steady, the unspoken bond between us reigniting amidst the staccato of gunfire.\n\n\nThe air grew heavy as a shell whistled overhead, its explosion shaking the ground beneath my feet. The blast sent a cloud of dust into the air, a stark reminder of the peril that surrounded us. This reunion felt too deliberate, too timed, sparked by whispers of a conspiracy tying our past betrayal to the war’s darkest secrets.\n\n\nYour presence hinted that you knew more than I did—perhaps the identity of the traitor who doomed our unit, a secret buried in the smoke and blood of Valthorne.\n\n\nThe choice was mine to make—trust you again, risking the fragile hope that flickered in my chest, or face the enemy alone in this desolate warzone where every shadow hid a threat.\n\n",
+    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\n\nThe war-torn city of Valthorne sprawled beneath a gunmetal sky, its once-proud skyline now a jagged ruin pierced by columns of smoke. The relentless thunder of artillery had echoed for three years since the conflict erupted in 2022, a constant reminder of the devastation that surrounded me. The air carried the acrid scent of gunpowder, mingled with the distant groans of collapsing buildings and the chill of a winter that refused to relent.\n\n\nI, a seasoned soldier and former reconnaissance officer, crouched behind a crumbling wall in the shattered district of Oldtown. The weight of my battered rifle pressed heavily against my shoulder, its cold metal a stark contrast to the warmth of memories that lingered. The despair of a population reduced to shadows hung thick, their silent pleas etched into the rubble around me.\n\n\nI once led an elite unit, forging bonds of trust and love with you, my second-in-command, until a mission to expose a traitor within our ranks went catastrophically wrong, scattering us across the battlefield and burying our romance under the weight of survival. That mission, launched in the spring of 2023, ended in betrayal, leaving me to wonder if I would ever see you again amidst the chaos.\n\n\nThen you appeared, emerging from the choking haze that cloaked Valthorne’s ruins. Your uniform hung tattered and blood-stained, your face streaked with dirt and a resolve hardened by years of relentless fighting. The sight of you stirred something deep within me, a mix of relief and pain I couldn’t suppress.\n\n\nYour eyes locked with mine, a flicker of recognition cutting through the war’s chaos. It rekindled memories of stolen moments—your laughter echoing in a quiet bunker, your gentle touch during a rare ceasefire in the fall of 2023, the love we buried to protect our unit from further division.\n\n\n\"[MyName],\" you whispered, your voice hoarse from shouting orders, stepping closer despite the whistle of bullets overhead.\n\n\"I thought you were dead.\"\n\n\nI froze, my heart pounding as those memories flooded back, each one a dagger of longing and regret. The weight of our past pressed down, urging me to reach out yet holding me back.\n\n\n\"Not yet,\" I replied, my voice tight with emotion.\n\n\"But we’re both running out of time, with the enemy closing in and the truth still hidden beneath this war’s ashes.\"\n\n\nYou nodded, your gaze steady, the unspoken bond between us reigniting amid the staccato of gunfire.\n\n\nThe air grew heavy as a shell whistled overhead, its explosion shaking the ground beneath my feet. The blast sent a cloud of dust into the air, a stark reminder of the peril that surrounded us. This reunion felt too deliberate, too timed, sparked by whispers of a conspiracy tying our past betrayal to the war’s darkest secrets.\n\n\nYour presence hinted that you knew more than I did—perhaps the identity of the traitor who had doomed our unit, a secret buried in the smoke and blood of Valthorne.\n\n\nThe choice lay before me—whether to trust you again, risking the fragile hope that flickered in my chest, or to face the enemy alone in this desolate warzone where every shadow concealed a threat.\n\n",
     "choices": [
-      {"text": "Embrace you and rekindle the past with cautious hope.", "next": "dynamic"},
-      {"text": "Question you about the conspiracy with guarded suspicion.", "next": "dynamic"},
-      {"text": "Prepare to fight, ignoring you to focus on survival.", "next": "dynamic"}
+      {"text": "Embrace you and rekindle the past with cautious hope.", "next": "confrontation"},
+      {"text": "Question you about the conspiracy with guarded suspicion.", "next": "interrogation"},
+      {"text": "Prepare to fight, ignoring you to focus on survival.", "next": "battle"}
+    ]
+  },
+  "confrontation": {
+    "narrative": "I pull you into a tight embrace, the war fading as memories of our past love resurface. Your body tenses against mine, your breath warm against my ear as you whisper my name, torn between joy and fear. The ground trembles as a shell explodes nearby, shattering the fragile moment. Dust settles around us, and I feel the weight of our unspoken history pressing down. Your eyes search mine, filled with a mix of hope and uncertainty, as if waiting for me to decide our next step.\n\n",
+    "choices": [
+      {"text": "Deepen the embrace and confess my feelings.", "next": "confession"},
+      {"text": "Step back and assess the danger around us.", "next": "caution"},
+      {"text": "Draw my weapon to protect us both.", "next": "defense"}
+    ]
+  },
+  "interrogation": {
+    "narrative": "I step forward, eyeing you warily as suspicion tightens my chest. 'What do you know about this war?' I demand, my voice low and steady. You hesitate, your expression darkening with secrets you’ve kept hidden. The wind carries the sound of approaching footsteps, urging me to press harder or pull back. Your silence speaks volumes, and I wonder if the truth will bring us closer or drive us apart in this ruined city.\n\n",
+    "choices": [
+      {"text": "Demand the truth with firm resolve.", "next": "revelation"},
+      {"text": "Wait for your explanation with cautious patience.", "next": "patience"},
+      {"text": "Threaten to leave if you don’t speak.", "next": "ultimatum"}
+    ]
+  },
+  "battle": {
+    "narrative": "I raise my rifle, scanning the ruins as I block you out, my heart hardening with the instinct to survive. Your voice calls out, a desperate plea lost in the wind, but I focus on the shadows moving closer. Enemy figures emerge from the smoke, their intent clear in the glint of their weapons. The choice to fight or flee weighs heavily, with your safety lingering in the back of my mind.\n\n",
+    "choices": [
+      {"text": "Charge at the enemy with fierce determination.", "next": "assault"},
+      {"text": "Signal you to join the fight cautiously.", "next": "alliance"},
+      {"text": "Retreat to find a safer position.", "next": "escape"}
+    ]
+  },
+  "confession": {
+    "narrative": "I deepen the embrace, my heart racing as I confess the love I’ve buried for years. Your eyes widen, a tear tracing through the dirt on your face, and for a moment, the war fades. But the sound of gunfire reminds me of the danger, pulling us back to reality. Your hand grips mine, a silent promise amid the chaos, as we face the uncertainty ahead.\n\n",
+    "choices": [
+      {"text": "Hold you close and plan our next move.", "next": "strategy"},
+      {"text": "Release you and prepare for the enemy.", "next": "preparation"},
+      {"text": "Seek shelter together to talk more.", "next": "refuge"}
+    ]
+  },
+  "caution": {
+    "narrative": "I step back, my eyes scanning the ruins for danger as the dust settles. Your presence beside me feels both comforting and tense, a reminder of what we’ve lost. The sound of footsteps grows louder, forcing me to decide whether to stay or move. Your steady gaze offers support, but the threat looms larger with each passing second.\n\n",
+    "choices": [
+      {"text": "Stay and confront the approaching threat.", "next": "stand"},
+      {"text": "Move us to a safer vantage point.", "next": "relocation"},
+      {"text": "Signal for help from nearby allies.", "next": "call"}
+    ]
+  },
+  "defense": {
+    "narrative": "I draw my weapon, positioning myself to protect us both as the explosion’s echo fades. Your sharp intake of breath tells me you’re ready, but the enemy’s shadows draw closer. The rifle feels steady in my hands, a lifeline in this chaos, as I weigh the cost of standing my ground or seeking cover.\n\n",
+    "choices": [
+      {"text": "Stand and fire at the approaching enemy.", "next": "firefight"},
+      {"text": "Guide you to cover while I hold them off.", "next": "cover"},
+      {"text": "Retreat with you to rethink our strategy.", "next": "retreat"}
+    ]
+  },
+  "revelation": {
+    "narrative": "I demand the truth, my voice cutting through the wind as I press you for answers. Your eyes flicker with guilt, and you reveal a name—the traitor who betrayed us. The revelation stings, linking our past to the war’s heart. Footsteps approach, forcing me to decide how to act on this newfound knowledge.\n\n",
+    "choices": [
+      {"text": "Confront the traitor with fierce resolve.", "next": "confrontation2"},
+      {"text": "Plan a stealthy approach with you.", "next": "stealth"},
+      {"text": "Withdraw to process the information.", "next": "withdrawal"}
+    ]
+  },
+  "patience": {
+    "narrative": "I wait, my gaze fixed on you as the silence stretches, hoping for an explanation. You finally speak, your voice trembling with the weight of secrets. The approaching danger grows louder, testing my patience as I listen to your hesitant words about our unit’s downfall.\n\n",
+    "choices": [
+      {"text": "Encourage you to continue sharing.", "next": "encourage"},
+      {"text": "Interrupt and demand clarity.", "next": "demand"},
+      {"text": "Prepare to defend us from the noise.", "next": "defense2"}
+    ]
+  },
+  "ultimatum": {
+    "narrative": "I threaten to leave if you don’t speak, my frustration boiling over. Your face pales, and you blurt out a fragment of the truth before the enemy’s shouts interrupt us. The tension between us thickens, leaving me to decide whether to stay or abandon you to this peril.\n\n",
+    "choices": [
+      {"text": "Stay and listen to your full confession.", "next": "confession2"},
+      {"text": "Leave to face the enemy alone.", "next": "solitude"},
+      {"text": "Demand more details before deciding.", "next": "insist"}
+    ]
+  },
+  "assault": {
+    "narrative": "I charge at the enemy, my rifle blazing with fierce determination. The clash is brutal, their return fire grazing my arm as I push forward. Your voice calls out, a mix of fear and pride, urging me to reconsider as the battle rages around us.\n\n",
+    "choices": [
+      {"text": "Press the attack with unrelenting force.", "next": "push"},
+      {"text": "Retreat to regroup with you.", "next": "regroup"},
+      {"text": "Signal for your support in the fight.", "next": "support"}
+    ]
+  },
+  "alliance": {
+    "narrative": "I signal you to join the fight, my caution guiding us as we take positions. Your skill with a weapon shines through, but the enemy’s numbers grow. The air fills with the crack of gunfire, forcing me to decide how to proceed with you by my side.\n\n",
+    "choices": [
+      {"text": "Coordinate a joint assault on the enemy.", "next": "coordination"},
+      {"text": "Hold our ground against the onslaught.", "next": "hold"},
+      {"text": "Plan a tactical withdrawal together.", "next": "withdrawal2"}
+    ]
+  },
+  "escape": {
+    "narrative": "I retreat, seeking a safer position as the enemy closes in. Your footsteps echo behind me, a sign of your trust, but the ruins offer little cover. The sound of pursuit grows, pushing me to find a defensible spot or risk capture.\n\n",
+    "choices": [
+      {"text": "Find a hidden vantage point to ambush.", "next": "ambush"},
+      {"text": "Continue running to evade them.", "next": "evasion"},
+      {"text": "Turn and fight with you at my side.", "next": "counter"}
     ]
   }
   // Dynamic branches will be generated by AI
@@ -54,6 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('currentNode', next);
         choicesDiv.innerHTML = ''; // Clear choices immediately
         generateDynamicNode(next, config, choiceText); // Generate new content
+      } else {
+        console.log('Click target is not a button:', event.target.tagName); // Debug non-button clicks
       }
     });
   }
@@ -110,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
           renderChoices(node.choices);
         } else {
           console.error('No choices available for node:', nodeId);
+          choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>'; // Fallback message
         }
       }
     }
@@ -153,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     } else {
       console.error('Choices array is empty or undefined');
+      choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>'; // Fallback message
     }
   }
 
@@ -207,8 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
       }
     } else {
-      narrative = storyTree[nodeId]?.narrative || `The story with ${partner} continues in unexpected ways...`;
-      choices = storyTree[nodeId]?.choices || [
+      const currentNode = storyTree[nodeId] || storyState;
+      narrative = currentNode.narrative || `The story with ${partner} continues in unexpected ways...`;
+      choices = currentNode.choices || [
         {"text": `Explore a new path with ${riskLevel === 'raw' ? 'bold' : 'curious'} intent.`, "next": "dynamic"},
         {"text": `Retreat with ${riskLevel === 'raw' ? 'cautious' : 'hesitant'} care.`, "next": "dynamic"},
         {"text": `Charge ahead with ${riskLevel === 'raw' ? 'fierce' : 'determined'} resolve.`, "next": "dynamic"}
