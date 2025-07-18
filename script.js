@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
+        console.log('Form data submitted:', data); // Debug log for name
         localStorage.setItem('storyConfig', JSON.stringify(data));
         sessionStorage.setItem('currentNode', 'start');
         window.location.href = 'engine_latest.html';
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       storyContent.innerHTML = '<p>No story configuration found. Please set up your adventure on the setup page.</p>';
       choicesDiv.innerHTML = '';
     } else {
+      console.log('Rendering node with config:', config); // Debug log for config
       renderNode(currentNode, config, storyState);
     }
 
@@ -67,15 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     narrative = narrative.replace(/\[partner-gender-pronoun\]/g, partnerGenderPronoun);
     narrative = narrative.replace(/\[partner-name-pronoun\]/g, partnerPronoun);
 
-    // Replace protagonist-related pronouns
+    // Replace protagonist-related pronouns and name
     const protagonistGender = config['protagonist-gender'] || 'no-preference';
     const protagonistPronoun = getSubjectPronoun(protagonistGender); // e.g., "he", "she", "they"
     const protagonistPossessivePronoun = getPossessivePronoun(protagonistGender); // e.g., "his", "her", "their"
-    narrative = narrative.replace('[protagonist-name]', config['protagonist-name'] || 'Traveler');
-    narrative = narrative.replace('[partner-name]', config['partner-name'] || 'Partner');
+    const protagonistName = config['protagonist-name'] || 'Traveler'; // Ensure name is captured
+    narrative = narrative.replace(/\[protagonist-name\]/g, protagonistName); // Global replace for name
     narrative = narrative.replace(/\[protagonist-name-pronoun\]/g, protagonistPronoun);
 
-    // Handle implied possessive contexts for protagonist (e.g., "shoulder" as possessive)
+    // Handle implied possessive contexts for protagonist
     narrative = narrative.replace(/\[protagonist-name-pronoun\] shoulder/g, protagonistPossessivePronoun + ' shoulder');
     narrative = narrative.replace(/\[protagonist-name-pronoun\] heart/g, protagonistPossessivePronoun + ' heart');
     narrative = narrative.replace(/\[protagonist-name-pronoun\] name/g, protagonistPossessivePronoun + ' name');
@@ -112,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     choicesDiv.innerHTML = '';
     choices.forEach((choice, idx) => {
       const button = document.createElement('button');
-      button.textContent = choice.text;
+      button.textContent = choice.text.replace('[partner-name]', config['partner-name'] || 'Partner'); // Replace partner name in choices
       button.dataset.next = choice.next;
       button.classList.add('choice-button');
       button.style.background = 'linear-gradient(90deg, #4a1a1a, #8a2b2b)';
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nodeId === 'dynamic') {
       switch (previousChoice) {
         case 'Embrace [partner-name] and rekindle the past with cautious hope.':
-          narrative = `${protagonistPronoun} pull ${partner} into a tight embrace, the war fading as memories of ${protagonistPossessivePronoun} past love resurface.\n\n${subjectPronoun} tense, whispering ${protagonistPronoun} name, torn between joy and fear.\n\nBut a shell explodes nearby, shattering the moment.`;
+          narrative = `${protagonistPronoun} pull ${partner} into a tight embrace, the war fading as memories of ${protagonistPossessivePronoun} past love resurface.\n\n${subjectPronoun} tense, whispering ${protagonist} name, torn between joy and fear.\n\nBut a shell explodes nearby, shattering the moment.`;
           choices = [
             {"text": `Hold ${partner} tighter with ${riskLevel === 'raw' ? 'fierce' : 'gentle'} resolve.`, "next": "dynamic"},
             {"text": `Push ${partner} to safety with ${riskLevel === 'raw' ? 'urgent' : 'cautious'} care.`, "next": "dynamic"},
