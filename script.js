@@ -7,7 +7,7 @@ const storyTree = {
     ]
   },
   "trust": {
-    "narrative": "I step toward Dorian, trusting the flicker of hope in his eyes. The war’s noise fades as I ask about the traitor. His voice trembles with truth, revealing a name. Smoke swirls, and I feel the weight of our past.\n\n",
+    "narrative": "I step toward Dorian, trusting the hope in his eyes. The war’s noise fades as I ask about the traitor. His voice trembles with truth, revealing a name. Smoke swirls, and I feel the weight of our past.\n\n",
     "choices": [
       {"text": "Dig deeper into the betrayal.", "next": "dig"},
       {"text": "Plan our next move together.", "next": "plan"}
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderNode(nodeId, config, storyState) {
     const node = storyTree[nodeId] || { narrative: storyState.narrative || 'No narrative available.', choices: [] };
+    console.log('Rendering node:', nodeId, 'with narrative:', node.narrative, 'and choices:', node.choices); // Enhanced debug
     let narrative = node.narrative;
     let myName = 'Anne';
     let yourName = 'Dorian';
@@ -118,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         choicesDiv.style.display = 'block';
         if (node.choices && node.choices.length > 0) {
-          console.log('Rendering choices:', node.choices);
+          console.log('Choices array found, rendering:', node.choices);
           renderChoices(node.choices);
         } else {
           console.error('No choices available for node:', nodeId);
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderChoices(choices) {
     choicesDiv.innerHTML = '';
-    console.log('Attempting to render choices:', choices);
+    console.log('Attempting to render choices:', choices); // Enhanced debug
     if (choices && choices.length > 0) {
       choices.forEach((choice, idx) => {
         let buttonText = choice.text;
