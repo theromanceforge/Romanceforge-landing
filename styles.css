@@ -53,20 +53,9 @@ nav ul li a:hover {
   text-align: center;
   padding: 4rem 1rem;
   color: #F5E8C7;
+  background: linear-gradient(135deg, #8A4B08, #E63946);
   position: relative;
   overflow: hidden;
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7;
-  z-index: -1;
 }
 
 .hero h1 {
@@ -120,14 +109,6 @@ nav ul li a:hover {
   transition: transform 0.3s;
   position: relative;
   overflow: hidden;
-}
-
-.card-image {
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
-  margin-bottom: 1rem;
 }
 
 .story-card:hover {
