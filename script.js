@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const storyContent = document.getElementById('story-content');
   const choicesDiv = document.getElementById('choices');
-  const restartButton = document.getElementById('restart-button');
 
   if (storyContent && choicesDiv) {
     const config = JSON.parse(localStorage.getItem('storyConfig') || '{}');
@@ -54,14 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         generateDynamicNode(next, config, choiceText); // Generate new content
       }
     });
-
-    restartButton.addEventListener('click', () => {
-      sessionStorage.removeItem('currentNode');
-      sessionStorage.removeItem('storyState');
-      localStorage.removeItem('storyConfig');
-      window.location.href = 'setup_latest.html';
-    });
-    restartButton.style.display = 'block';
   }
 
   function renderNode(nodeId, config, storyState) {
@@ -70,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     narrative = narrative.replace('[protagonist-name]', config['protagonist-name'] || 'Traveler');
     narrative = narrative.replace('[partner-name]', config['partner-name'] || 'Partner');
     narrative = narrative.replace('[partner-gender-pronoun]', getPronoun(config['partner-gender'] || 'no-preference'));
+    narrative = narrative.replace('[partner-name-pronoun]', getSubjectPronoun(config['partner-gender'] || 'no-preference'));
 
     // Split narrative into words for typing effect
     const words = narrative.split(' ');
@@ -134,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const protagonist = config['protagonist-name'] || 'Traveler';
     const partner = config['partner-name'] || 'Partner';
     let pronoun = getPronoun(config['partner-gender'] || 'no-preference');
+    let subjectPronoun = getSubjectPronoun(config['partner-gender'] || 'no-preference');
     let narrative = '';
     let choices = [];
 
@@ -142,34 +135,34 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'Give in to the moment and kiss [partner-name], letting passion take over.':
           narrative = `The tension breaks as you kiss ${partner}, a fiery passion igniting between you. ${pronoun} hands grip you tightly, the room fading into a haze of desire. But a sudden noise outside hints at danger creeping closer.`;
           choices = [
-            {"text": `Deepen the kiss with a steamy intensity.`, "next": "dynamic"},
-            {"text": `Pause to listen for the noise with cautious curiosity.`, "next": "dynamic"},
-            {"text": `Pull back and suggest moving to safety with urgent passion.`, "next": "dynamic"}
+            {"text": `Deepen the kiss with ${riskLevel === 'raw' ? 'raw' : 'gentle'} passion.`, "next": "dynamic"},
+            {"text": `Pause to listen for the noise with ${riskLevel === 'raw' ? 'edgy' : 'cautious'} curiosity.`, "next": "dynamic"},
+            {"text": `Pull back and suggest moving to safety with ${riskLevel === 'raw' ? 'fierce' : 'calm'} urgency.`, "next": "dynamic"}
           ];
           break;
         case 'Pull away and insist on discussing the case evidence first.':
-          narrative = `You step back from ${partner}, demanding to review the evidence. ${pronoun} gaze hardens as you spread the files, the air thick with tension. A shadow moves past the window, unnoticed.`;
+          narrative = `You step back from ${partner}, demanding to review the evidence. ${subjectPronoun} gaze hardens as you spread the files, the air thick with tension. A shadow moves past the window, unnoticed.`;
           choices = [
-            {"text": `Analyze the evidence with intense focus.`, "next": "dynamic"},
-            {"text": `Confront ${partner} about ${pronoun} reaction with sharp words.`, "next": "dynamic"},
-            {"text": `Check the window for the shadow with wary eyes.`, "next": "dynamic"}
+            {"text": `Analyze the evidence with ${riskLevel === 'raw' ? 'intense' : 'focused'} scrutiny.`, "next": "dynamic"},
+            {"text": `Confront ${partner} about ${pronoun} reaction with ${riskLevel === 'raw' ? 'sharp' : 'firm'} words.`, "next": "dynamic"},
+            {"text": `Check the window for the shadow with ${riskLevel === 'raw' ? 'bold' : 'wary'} eyes.`, "next": "dynamic"}
           ];
           break;
         case 'Suggest leaving the room to find a safer place to talk.':
-          narrative = `You propose leaving with ${partner}, ${pronoun} nod tinged with reluctance. The hallway looms dark and silent as you step out, the past haunting your steps.`;
+          narrative = `You propose leaving with ${partner}, ${subjectPronoun} nod tinged with reluctance. The hallway looms dark and silent as you step out, the past haunting your steps.`;
           choices = [
-            {"text": `Lead ${partner} to a hidden alley with bittersweet resolve.`, "next": "dynamic"},
-            {"text": `Pause to secure the room before leaving with cautious care.`, "next": "dynamic"},
-            {"text": `Rush forward, seeking safety with desperate speed.`, "next": "dynamic"}
+            {"text": `Lead ${partner} to a hidden alley with ${riskLevel === 'raw' ? 'defiant' : 'bittersweet'} resolve.`, "next": "dynamic"},
+            {"text": `Pause to secure the room before leaving with ${riskLevel === 'raw' ? 'aggressive' : 'careful'} intent.`, "next": "dynamic"},
+            {"text": `Rush forward, seeking safety with ${riskLevel === 'raw' ? 'reckless' : 'desperate'} speed.`, "next": "dynamic"}
           ];
           break;
       }
     } else {
-      narrative = storyTree[nodeId]?.narrative || 'The story continues in unexpected ways...';
+      narrative = storyTree[nodeId]?.narrative || `The story with ${partner} continues in unexpected ways...`;
       choices = storyTree[nodeId]?.choices || [
-        {"text": "Explore a new path with curiosity.", "next": "dynamic"},
-        {"text": "Retreat with cautious intent.", "next": "dynamic"},
-        {"text": "Charge ahead with bold determination.", "next": "dynamic"}
+        {"text": `Explore a new path with ${riskLevel === 'raw' ? 'bold' : 'curious'} intent.`, "next": "dynamic"},
+        {"text": `Retreat with ${riskLevel === 'raw' ? 'cautious' : 'hesitant'} care.`, "next": "dynamic"},
+        {"text": `Charge ahead with ${riskLevel === 'raw' ? 'fierce' : 'determined'} resolve.`, "next": "dynamic"}
       ];
     }
 
@@ -189,6 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'no-preference':
       default:
         return 'their';
+    }
+  }
+
+  function getSubjectPronoun(gender) {
+    switch (gender) {
+      case 'male':
+        return 'he';
+      case 'female':
+        return 'she';
+      case 'no-preference':
+      default:
+        return 'they';
     }
   }
 });
