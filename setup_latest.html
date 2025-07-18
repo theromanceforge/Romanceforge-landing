@@ -45,6 +45,7 @@
   <title>Setup Your Story - The Romance Forge</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header>
@@ -59,33 +60,28 @@
     </nav>
   </header>
 
-  <section class="setup-content">
+  <section class="content">
     <h1>Setup Your Adventure</h1>
-    <p>Customize your story to dive into a world of passion and choices. Start by filling in the details below.</p>
-    <form id="story-setup-form">
-      <div class="form-section">
-        <h2>Protagonist Details</h2>
+    <div class="setup-wrapper">
+      <form id="story-setup-form">
         <div class="form-group">
-          <label for="protagonist-name">Protagonist's Name</label>
+          <label for="protagonist-name"><i class="fas fa-user"></i> Protagonist's Name</label>
           <input type="text" id="protagonist-name" name="protagonist-name" placeholder="E.g., Alex" required>
         </div>
         <div class="form-group">
-          <label>Protagonist's Gender</label>
+          <label><i class="fas fa-venus-mars"></i> Protagonist's Gender</label>
           <select name="protagonist-gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="female">Female</option>
             <option value="male">Male</option>
           </select>
         </div>
-      </div>
-      <div class="form-section">
-        <h2>Partner Details</h2>
         <div class="form-group">
-          <label for="partner-name">Preferred Partner's Name</label>
+          <label for="partner-name"><i class="fas fa-user-friends"></i> Preferred Partner's Name</label>
           <input type="text" id="partner-name" name="partner-name" placeholder="E.g., Jordan" required>
         </div>
         <div class="form-group">
-          <label>Preferred Partner's Gender</label>
+          <label><i class="fas fa-venus-mars"></i> Preferred Partner's Gender</label>
           <select name="partner-gender" required>
             <option value="" disabled selected>Select Gender</option>
             <option value="male">Male</option>
@@ -93,11 +89,8 @@
             <option value="no-preference">No Preference</option>
           </select>
         </div>
-      </div>
-      <div class="form-section">
-        <h2>Story Settings</h2>
         <div class="form-group">
-          <label>Story Length</label>
+          <label><i class="fas fa-clock"></i> Story Length</label>
           <select name="story-length" required>
             <option value="" disabled selected>Select Length</option>
             <option value="standard">Standard (30 minutes)</option>
@@ -106,7 +99,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Emotional Risk Level</label>
+          <label><i class="fas fa-exclamation-triangle"></i> Emotional Risk Level</label>
           <select name="emotional-risk" required>
             <option value="" disabled selected>Select Risk Level</option>
             <option value="medium">Medium</option>
@@ -115,7 +108,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Choose a Story</label>
+          <label><i class="fas fa-book"></i> Choose a Story</label>
           <select name="story-choice" required>
             <option value="" disabled selected>Select Story</option>
             <option value="no-way-back">No Way Back: The Hotel Room Game</option>
@@ -124,7 +117,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Select a Tone</label>
+          <label><i class="fas fa-palette"></i> Select a Tone</label>
           <select name="tone" required>
             <option value="" disabled selected>Select Tone</option>
             <option value="steamy">🔥 Steamy</option>
@@ -133,9 +126,15 @@
             <option value="mystery">🕵️ Mystery/Thriller</option>
           </select>
         </div>
-      </div>
-      <button type="submit" class="cta-button">Begin Your Adventure</button>
-    </form>
+        <button type="submit" class="cta-button"><i class="fas fa-arrow-right"></i> Begin</button>
+      </form>
+      <aside class="recommendations">
+        <h2>Recommendations</h2>
+        <p><i class="fas fa-lightbulb"></i> For a steamy start, choose "No Way Back" with "Intense" tone.</p>
+        <p><i class="fas fa-lightbulb"></i> If you like emotional depth, try "Beneath the Gunmetal Sky" with "Raw / Edgy" risk.</p>
+        <p><i class="fas fa-lightbulb"></i> Name your protagonist after a favorite character for immersion!</p>
+      </aside>
+    </div>
   </section>
 
   <footer>
