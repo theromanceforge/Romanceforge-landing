@@ -1,37 +1,26 @@
 const storyTree = {
   "start": {
-    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\n\n\nThe war-torn city of Valthorne sprawled beneath a gunmetal sky, its once-proud skyline now a jagged ruin pierced by columns of smoke. The relentless thunder of artillery had echoed for three years since the conflict erupted in 2022, a constant reminder of the devastation that surrounded me. The air carried the acrid scent of gunpowder, mingled with the distant groans of collapsing buildings and the chill of a winter that refused to relent.\n\n\n\nI, a seasoned soldier and former reconnaissance officer, crouched behind a crumbling wall in the shattered district of Oldtown. The weight of my battered rifle pressed heavily against my shoulder, its cold metal a stark contrast to the warmth of memories that lingered. The despair of a population reduced to shadows hung thick, their silent pleas etched into the rubble around me.\n\n\n\nI once led an elite unit, forging bonds of trust and love with you, my second-in-command, until a mission to expose a traitor within our ranks went catastrophically wrong, scattering us across the battlefield and burying our romance under the weight of survival. That mission, launched in the spring of 2023, ended in betrayal, leaving me to wonder if I would ever see you again amidst the chaos.\n\n\n\nThen you appeared, emerging from the choking haze that cloaked Valthorne’s ruins. Your uniform hung tattered and blood-stained, your face streaked with dirt and a resolve hardened by years of relentless fighting. The sight of you stirred something deep within me, a mix of relief and pain I couldn’t suppress.\n\n\n\n- \"[MyName],\" you whispered, your voice hoarse from shouting orders, stepping closer despite the whistle of bullets overhead.\n\n- \"I thought you were dead.\"\n\n\n\nI froze, my heart pounding as those memories flooded back, each one a dagger of longing and regret. The weight of our past pressed down, urging me to reach out yet holding me back.\n\n\n\n- \"Not yet,\" I replied, my voice tight with emotion.\n\n- \"But we’re both running out of time, with the enemy closing in and the truth still hidden beneath this war’s ashes.\"\n\n\n\nYou nodded, your gaze steady, the unspoken bond between us reigniting amid the staccato of gunfire.\n\n\n\nThe air grew heavy as a shell whistled overhead, its explosion shaking the ground beneath my feet. The blast sent a cloud of dust into the air, a stark reminder of the peril that surrounded us. This reunion felt too deliberate, too timed, sparked by whispers of a conspiracy tying our past betrayal to the war’s darkest secrets.\n\n\n\nYour presence hinted that you knew more than I did—perhaps the identity of the traitor who had doomed our unit, a secret buried in the smoke and blood of Valthorne.\n\n\n\nThe choice lay before me—whether to trust you again, risking the fragile hope that flickered in my chest, or to face the enemy alone in this desolate warzone where every shadow concealed a threat.\n\n",
+    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\n\n\nThe war-torn city of Valthorne stretches beneath a gunmetal sky, its skyline a jagged ruin pierced by smoke. The artillery’s thunder has echoed for three years since the war began in 2022, a relentless reminder of the devastation around me. The air smells of gunpowder and carries the chill of a stubborn winter.\n\n\n\nI, a seasoned soldier, crouch behind a crumbling wall in Oldtown. My battered rifle rests heavily on my shoulder, its cold metal clashing with warm memories. Shadows of a broken people linger in the rubble.\n\n\n\nYou emerge from the haze, your tattered uniform and dirt-streaked face a sight that stirs my heart with relief and pain. Our eyes meet, rekindling memories of a lost love from a ceasefire in 2023.\n\n\n\n- \"[MyName],\" you whisper, voice rough, stepping closer despite the bullets.\n\n- \"I thought you were dead.\"\n\n\n\nI pause, memories flooding back, urging me to act.\n\n\n\n- \"Not yet,\" I say, emotion tightening my voice.\n\n\n\nThe choice is mine to make.\n\n",
     "choices": [
-      {"text": "Embrace you and rekindle the past with cautious hope.", "next": "confrontation"},
-      {"text": "Question you about the conspiracy with guarded suspicion.", "next": "interrogation"},
-      {"text": "Prepare to fight, ignoring you to focus on survival.", "next": "battle"}
+      {"text": "Embrace you with cautious hope.", "next": "embrace"},
+      {"text": "Question you about the past.", "next": "question"}
     ]
   },
-  "confrontation": {
-    "narrative": "I pulled you into a tight embrace, the war fading as memories of our past love resurfaced. Your body tensed against mine, your breath warm against my ear as you whispered my name, torn between joy and fear. The ground trembled as a shell exploded nearby, shattering the fragile moment. Dust settled around us, and I felt the weight of our unspoken history pressing down. Your eyes searched mine, filled with a mix of hope and uncertainty, waiting for me to guide our next step.\n\n",
+  "embrace": {
+    "narrative": "I wrap my arms around you, the war fading as old feelings resurface. Your tension eases slightly, but a nearby explosion jolts us back. Dust fills the air, and I hold you tighter, unsure of what comes next.\n\n",
     "choices": [
-      {"text": "Deepen the embrace and confess my feelings.", "next": "confession"},
-      {"text": "Step back and assess the danger around us.", "next": "caution"},
-      {"text": "Draw my weapon to protect us both.", "next": "defense"}
+      {"text": "Hold you and plan our escape.", "next": "plan"},
+      {"text": "Release you and face the danger.", "next": "face"}
     ]
   },
-  "interrogation": {
-    "narrative": "I stepped forward, eyeing you warily as suspicion tightened my chest. 'What did you know about this war?' I demanded, my voice low and steady. You hesitated, your expression darkening with secrets you’d kept hidden. The wind carried the sound of approaching footsteps, urging me to press harder or pull back. Your silence spoke volumes, and I wondered if the truth would bring us closer or drive us apart in this ruined city.\n\n",
+  "question": {
+    "narrative": "I step closer, eyeing you with suspicion. 'What happened back then?' I ask, my voice low. You hesitate, the weight of secrets in your silence, as danger nears.\n\n",
     "choices": [
-      {"text": "Demand the truth with firm resolve.", "next": "revelation"},
-      {"text": "Wait for your explanation with cautious patience.", "next": "patience"},
-      {"text": "Threaten to leave if you don’t speak.", "next": "ultimatum"}
-    ]
-  },
-  "battle": {
-    "narrative": "I raised my rifle, scanning the ruins as I blocked you out, my heart hardening with the instinct to survive. Your voice called out, a desperate plea lost in the wind, but I focused on the shadows moving closer. Enemy figures emerged from the smoke, their intent clear in the glint of their weapons. The choice to fight or flee weighed heavily, with your safety lingering in the back of my mind.\n\n",
-    "choices": [
-      {"text": "Charge at the enemy with fierce determination.", "next": "assault"},
-      {"text": "Signal you to join the fight cautiously.", "next": "alliance"},
-      {"text": "Retreat to find a safer position.", "next": "escape"}
+      {"text": "Press for answers.", "next": "press"},
+      {"text": "Wait for your response.", "next": "wait"}
     ]
   }
-  // Additional nodes can be added as needed
+  // Additional nodes can be added later
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -42,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
-        console.log('Form data submitted:', data); // Debug log for perspective
+        console.log('Form data submitted:', data);
         localStorage.setItem('storyConfig', JSON.stringify(data));
         sessionStorage.setItem('currentNode', 'start');
         window.location.href = 'engine_latest.html';
@@ -61,12 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentNode = sessionStorage.getItem('currentNode') || 'start';
     let storyState = JSON.parse(sessionStorage.getItem('storyState') || '{}');
 
-    // Immediate render on load with fallback
     if (!config || Object.keys(config).length === 0) {
       storyContent.innerHTML = '<p>No story configuration found. Please set up your adventure on the setup page.</p>';
       choicesDiv.innerHTML = '';
     } else {
-      console.log('Rendering node with config:', config); // Debug log for config
+      console.log('Rendering node with config:', config);
       renderNode(currentNode, config, storyState);
     }
 
@@ -74,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.target.tagName === 'BUTTON') {
         const next = event.target.dataset.next;
         const choiceText = event.target.textContent;
-        console.log('Button clicked, next node:', next, 'Choice:', choiceText); // Debug log
+        console.log('Button clicked, next node:', next, 'Choice:', choiceText);
         sessionStorage.setItem('currentNode', next);
-        choicesDiv.innerHTML = ''; // Clear choices immediately
-        generateDynamicNode(next, config, choiceText); // Generate new content
+        choicesDiv.innerHTML = '';
+        generateDynamicNode(next, config, choiceText);
       } else {
-        console.log('Click target is not a button:', event.target.tagName); // Debug non-button clicks
+        console.log('Click target is not a button:', event.target.tagName);
       }
     });
   }
@@ -110,11 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         .replace(/you/g, yourName)
                         .replace(/your/g, yourPossessivePronoun);
 
-    // Split narrative into words for typing effect
     const words = narrative.split(' ');
-    storyContent.innerHTML = ''; // Clear previous content
+    storyContent.innerHTML = '';
     let index = 0;
-    choicesDiv.style.display = 'none'; // Hide choices initially
+    choicesDiv.style.display = 'none';
 
     function typeNextWord() {
       if (index < words.length) {
@@ -125,18 +112,17 @@ document.addEventListener('DOMContentLoaded', () => {
         storyContent.appendChild(span);
         setTimeout(() => {
           span.style.opacity = '1';
-        }, 10); // Smooth fade-in
+        }, 10);
         index++;
-        setTimeout(typeNextWord, 200); // 200ms per word
+        setTimeout(typeNextWord, 200);
       } else {
-        // Show choices only after all words are typed
         choicesDiv.style.display = 'block';
         if (node.choices && node.choices.length > 0) {
-          console.log('Rendering choices:', node.choices); // Debug log
+          console.log('Rendering choices:', node.choices);
           renderChoices(node.choices);
         } else {
           console.error('No choices available for node:', nodeId);
-          choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>'; // Fallback message
+          choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>';
         }
       }
     }
@@ -146,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderChoices(choices) {
     choicesDiv.innerHTML = '';
-    console.log('Attempting to render choices:', choices); // Enhanced debug log
+    console.log('Attempting to render choices:', choices);
     if (choices && choices.length > 0) {
       choices.forEach((choice, idx) => {
         let buttonText = choice.text;
@@ -178,16 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
           button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.4)';
         };
         choicesDiv.appendChild(button);
-        console.log('Choice button added:', buttonText); // Debug each button addition
+        console.log('Choice button added:', buttonText);
       });
     } else {
       console.error('Choices array is empty or undefined in renderChoices');
-      choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>'; // Fallback message
+      choicesDiv.innerHTML = '<p>No choices available. Please try again.</p>';
     }
   }
 
   function generateDynamicNode(nodeId, config, previousChoice) {
-    console.log('Generating dynamic node for:', nodeId, 'with choice:', previousChoice); // Debug log
+    console.log('Generating dynamic node for:', nodeId, 'with choice:', previousChoice);
     const riskLevel = config['emotional-risk'] || 'medium';
     let protagonist = 'Dorian';
     let partner = 'Anne';
@@ -210,82 +196,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nodeId === 'dynamic') {
       switch (previousChoice) {
-        case 'Embrace you and rekindle the past with cautious hope.':
-          narrative = `${protagonistPronoun} pulled ${partner} into a tight embrace, the war fading as memories of ${protagonistPossessivePronoun} past love resurfaced.\n\n${partnerPronoun} tensed, whispering ${protagonist} name, torn between joy and fear.\n\nBut a shell exploded nearby, shattering the moment.`;
+        case 'Embrace you with cautious hope.':
+          narrative = `${protagonistPronoun} wrapped ${partner} in a tight embrace, the war fading as old feelings resurfaced.\n\n${partnerPronoun} tensed, whispering ${protagonist} name with a mix of joy and fear.\n\nA nearby explosion shattered the moment.`;
           choices = [
-            {"text": `Hold ${partner} tighter with ${riskLevel === 'raw' ? 'fierce' : 'gentle'} resolve.`, "next": "dynamic"},
-            {"text": `Push ${partner} to safety with ${riskLevel === 'raw' ? 'urgent' : 'cautious'} care.`, "next": "dynamic"},
-            {"text": `Draw ${protagonistPronoun} weapon with ${riskLevel === 'raw' ? 'bold' : 'steady'} intent.`, "next": "dynamic"}
+            {"text": `Hold ${partner} closer with gentle resolve.`, "next": "hold"},
+            {"text": `Step back to assess the danger.`, "next": "assess"}
           ];
           break;
-        case 'Question you about the conspiracy with guarded suspicion.':
-          narrative = `${protagonistPronoun} stepped forward, eyeing ${partner} warily.\n\n- \"What do you know about this war?\" ${protagonist} demanded, voice low.\n\n${partnerPronoun} hesitated, ${partnerPossessivePronoun} expression darkening with secrets.`;
+        case 'Question you about the past.':
+          narrative = `${protagonistPronoun} stepped closer, eyeing ${partner} with suspicion.\n\n- \"What happened back then?\" ${protagonist} asked, voice low.\n\n${partnerPronoun} paused, secrets shadowing ${partnerPossessivePronoun} face.`;
           choices = [
-            {"text": `Press ${partner} harder with ${riskLevel === 'raw' ? 'intense' : 'firm'} scrutiny.`, "next": "dynamic"},
-            {"text": `Wait for ${partnerPronoun} response with ${riskLevel === 'raw' ? 'edgy' : 'patient'} silence.`, "next": "dynamic"},
-            {"text": `Threaten to leave with ${riskLevel === 'raw' ? 'harsh' : 'calm'} resolve.`, "next": "dynamic"}
-          ];
-          break;
-        case 'Prepare to fight, ignoring you to focus on survival.':
-          narrative = `${protagonist} raised ${protagonistPronoun} rifle, scanning the ruins.\n\n${partner} called out, but ${protagonistPronoun} blocked ${partnerPronoun} out, heart hardened by survival.\n\nEnemy shadows emerged from the smoke.`;
-          choices = [
-            {"text": `Engage the enemy with ${riskLevel === 'raw' ? 'reckless' : 'focused'} fury.`, "next": "dynamic"},
-            {"text": `Signal ${partner} to join with ${riskLevel === 'raw' ? 'sharp' : 'cautious'} command.`, "next": "dynamic"},
-            {"text": `Retreat with ${riskLevel === 'raw' ? 'defiant' : 'strategic'} haste.`, "next": "dynamic"}
+            {"text": `Press for more details.`, "next": "press"},
+            {"text": `Wait for ${partnerPronoun} to speak.`, "next": "wait"}
           ];
           break;
       }
     } else {
       const currentNode = storyTree[nodeId] || storyState;
-      narrative = currentNode.narrative || `The story with ${partner} continues in unexpected ways...`;
-      choices = currentNode.choices || [
-        {"text": `Explore a new path with ${riskLevel === 'raw' ? 'bold' : 'curious'} intent.`, "next": "dynamic"},
-        {"text": `Retreat with ${riskLevel === 'raw' ? 'cautious' : 'hesitant'} care.`, "next": "dynamic"},
-        {"text": `Charge ahead with ${riskLevel === 'raw' ? 'fierce' : 'determined'} resolve.`, "next": "dynamic"}
-      ];
+      narrative = currentNode.narrative || `The story with ${partner} continues...`;
+      choices = currentNode.choices || [];
     }
 
-    // Store the generated state
     const newState = { narrative, choices };
     storyState = { ...storyState, ...newState };
     sessionStorage.setItem('storyState', JSON.stringify(storyState));
-    console.log('New state generated:', newState); // Debug log
+    console.log('New state generated:', newState);
     renderNode(nodeId, config, storyState);
   }
 
   function getPronoun(gender) {
     switch (gender) {
-      case 'male':
-        return 'his';
-      case 'female':
-        return 'her';
-      case 'no-preference':
-      default:
-        return 'their';
+      case 'male': return 'his';
+      case 'female': return 'her';
+      case 'no-preference': default: return 'their';
     }
   }
 
   function getSubjectPronoun(gender) {
     switch (gender) {
-      case 'male':
-        return 'he';
-      case 'female':
-        return 'she';
-      case 'no-preference':
-      default:
-        return 'they';
+      case 'male': return 'he';
+      case 'female': return 'she';
+      case 'no-preference': default: return 'they';
     }
   }
 
   function getPossessivePronoun(gender) {
     switch (gender) {
-      case 'male':
-        return 'his';
-      case 'female':
-        return 'her';
-      case 'no-preference':
-      default:
-        return 'their';
+      case 'male': return 'his';
+      case 'female': return 'her';
+      case 'no-preference': default: return 'their';
     }
   }
 });
