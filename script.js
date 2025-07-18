@@ -1,10 +1,10 @@
 const storyTree = {
   "start": {
-    "narrative": "The door to the hotel room clicks shut behind you, the sound echoing like a final verdict in a courtroom. The air is thick with the scent of cheap cologne and lingering cigarette smoke, the kind that clings to secrets and bad decisions. You, [protagonist-name], stand there in your rumpled detective coat, the badge on your belt feeling heavier than ever with each passing case. The fabric brushes against your skin, a reminder of the countless nights spent chasing shadows. Across the room, [partner-name] leans against the window, [partner-gender-pronoun] silhouette framed by the neon glow piercing through the grimy glass from the city below—a restless urban beast that never sleeps. [partner-name-pronoun] not the person you remember from the academy; [partner-gender-pronoun] features are hardened now, eyes shadowed by years of undercover work, carrying the weight of demons only the two of you understand. \"You shouldn't be here,\" [partner-name] murmurs, [partner-gender-pronoun] voice a low, gravelly rumble that sends a shiver racing down your spine, igniting a spark of forbidden familiarity. But you both know why you are. The case that bound you together—a relentless string of disappearances in the city's underbelly—has led to this charged moment, where the thin lines between duty and desire blur into a dangerous haze.",
+    "narrative": "No Way Back\n\nChapter One: Unfinished Business\nDetective [protagonist-name] had seen [partner-name-pronoun] fair share of nightmares. Bloodied crime scenes. Hollowed-out junkies. The cold, vacant stares of the guilty and the damned. But none of it rattled [partner-name-pronoun] quite like [partner-name]. [partner-name] stood in the middle of [protagonist-name-pronoun] interrogation room, arms crossed, [partner-gender-pronoun] brown eyes narrowed like [partner-name-pronoun] was ready to fight. [partner-name-pronoun] was always ready to fight—especially with [protagonist-name].\n\n\"This is bullshit, [protagonist-name],\" [partner-name] snapped, tossing a manila folder onto the table. \"Do you know how hard I worked to keep that kid in a stable home? And now, because your department botched the arrest, [partner-gender-pronoun] father’s back on the streets?\"\n\n[protagonist-name] leaned back in [protagonist-name-pronoun] chair, arms draped over the rests like [partner-name-pronoun] had all the time in the world. [protagonist-name-pronoun] knew better than to take [partner-name-pronoun] anger personally. That didn’t mean [partner-name-pronoun] wasn’t enjoying the way [partner-name-pronoun] frustration made [partner-gender-pronoun] chest rise and fall, the way that fitted blazer hugged curves that didn’t belong in a government-issued cubicle.\n\n\"Didn’t know you cared so much about my job performance,\" [protagonist-name] drawled, [protagonist-name-pronoun] voice rough from too much coffee and too little sleep. \"Or is this just an excuse to get in my face again?\"\n\n[partner-name] exhaled sharply, [partner-gender-pronoun] perfectly glossed lips tightening. \"You think this is funny?\"\n\n[protagonist-name] smirked. [partner-name-pronoun] loved pissing [partner-name] off. Almost as much as [partner-name-pronoun] loved thinking about what [partner-name] looked like when [partner-name-pronoun] wasn’t wearing that suit.\n\n\"I think,\" [protagonist-name] said slowly, standing to [protagonist-name-pronoun] full height, watching the way [partner-name] instinctively stiffened, \"that you don’t give a damn about the arrest. You just wanted an excuse to see me.\"\n\n[partner-name] scoffed, rolling [partner-gender-pronoun] eyes. \"You’re insufferable.\"\n\n\"And yet, you’re still standing here,\" [protagonist-name] murmured, stepping closer, invading [partner-gender-pronoun] space. [partner-name] didn’t back up. [partner-name-pronoun] never did. That was the problem.\n\nThis was how it always started with them. Tension crackling like a live wire. Words sharpened into weapons. A push, a pull, a slow, inevitable burn.\n\n\"Tell me, [partner-name],\" [protagonist-name] continued, [protagonist-name-pronoun] voice dipping lower. \"Did you come here for justice? Or because you missed me?\"\n\n[partner-name-pronoun] breath hitched, but [partner-name-pronoun] covered it quickly. Too quickly. \"I came here because you screwed up. Because this kid matters—more than your ego, more than whatever the hell this is between us.\"\n\n[protagonist-name-pronoun] jaw flexed. [partner-name-pronoun] could play games all day, but this part? The part where [partner-name] made [protagonist-name] feel like a man with a heart instead of just a badge? That was dangerous.\n\n[partner-name] took a deep breath, glancing at the door like [partner-name-pronoun] was debating whether to walk away. But [partner-name-pronoun] didn’t.\n\n\"I can’t do this with you again,\" [partner-name] muttered, [partner-gender-pronoun] voice softer now. \"Every time I get close, I—\"\n\n\"You what?\" [protagonist-name] was in front of [partner-name] now, so close [protagonist-name-pronoun] could feel the heat of [partner-gender-pronoun] body through the air between them.\n\n[partner-name] swallowed hard. [protagonist-name-pronoun] knew what [partner-name-pronoun] wanted to say. [protagonist-name-pronoun] also knew [partner-name-pronoun]’d never admit it.\n\nInstead, [partner-name] grabbed the folder off the table, shoved it against [protagonist-name-pronoun] chest. \"Fix this,\" [partner-name] whispered, turning on [partner-gender-pronoun] heel.\n\n[partner-name-pronoun] was almost out the door when [protagonist-name] called after [partner-name]. \"You ever gonna let me finish what we started?\"\n\n[partner-name-pronoun] hesitated—just long enough for [protagonist-name] to catch it.\n\nThen [partner-name] walked out, leaving [protagonist-name] alone in that interrogation room, aching for a case [protagonist-name-pronoun] had no clue how to solve.\nAnd for a [partner-name] who knew exactly how to ruin [protagonist-name].",
     "choices": [
-      {"text": "Give in to the moment and kiss [partner-name], letting passion take over.", "next": "dynamic"},
-      {"text": "Pull away and insist on discussing the case evidence first.", "next": "dynamic"},
-      {"text": "Suggest leaving the room to find a safer place to talk.", "next": "dynamic"}
+      {"text": "Follow [partner-name] out and confront [partner-gender-pronoun] feelings.", "next": "dynamic"},
+      {"text": "Stay and review the case file with focused determination.", "next": "dynamic"},
+      {"text": "Leave the precinct to clear [protagonist-name-pronoun] mind.", "next": "dynamic"}
     ]
   }
   // Dynamic branches will be generated by AI
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     narrative = narrative.replace('[partner-name]', config['partner-name'] || 'Partner');
     narrative = narrative.replace('[partner-gender-pronoun]', getPronoun(config['partner-gender'] || 'no-preference'));
     narrative = narrative.replace('[partner-name-pronoun]', getSubjectPronoun(config['partner-gender'] || 'no-preference'));
+    narrative = narrative.replace('[protagonist-name-pronoun]', getSubjectPronoun(config['protagonist-gender'] || 'no-preference'));
 
     // Split narrative into words for typing effect
     const words = narrative.split(' ');
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
           span.style.opacity = '1';
         }, 10); // Smooth fade-in
         index++;
-        setTimeout(typeNextWord, 100); // 100ms per word
+        setTimeout(typeNextWord, 200); // 200ms per word
       } else {
         // Show choices only after all words are typed
         choicesDiv.style.display = 'block';
@@ -127,33 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const partner = config['partner-name'] || 'Partner';
     let pronoun = getPronoun(config['partner-gender'] || 'no-preference');
     let subjectPronoun = getSubjectPronoun(config['partner-gender'] || 'no-preference');
+    let protagonistPronoun = getSubjectPronoun(config['protagonist-gender'] || 'no-preference');
     let narrative = '';
     let choices = [];
 
     if (nodeId === 'dynamic') {
       switch (previousChoice) {
-        case 'Give in to the moment and kiss [partner-name], letting passion take over.':
-          narrative = `The tension breaks as you kiss ${partner}, a fiery passion igniting between you. ${pronoun} hands grip you tightly, the room fading into a haze of desire. But a sudden noise outside hints at danger creeping closer.`;
+        case 'Follow [partner-name] out and confront [partner-gender-pronoun] feelings.':
+          narrative = `${protagonistPronoun} follow ${partner} out, catching ${pronoun} arm just outside the precinct. "We need to talk," ${protagonist} say, voice firm. ${subjectPronoun} turn, eyes wide, caught off guard.`;
           choices = [
-            {"text": `Deepen the kiss with ${riskLevel === 'raw' ? 'raw' : 'gentle'} passion.`, "next": "dynamic"},
-            {"text": `Pause to listen for the noise with ${riskLevel === 'raw' ? 'edgy' : 'cautious'} curiosity.`, "next": "dynamic"},
-            {"text": `Pull back and suggest moving to safety with ${riskLevel === 'raw' ? 'fierce' : 'calm'} urgency.`, "next": "dynamic"}
+            {"text": `Press ${partner} for an honest confession with ${riskLevel === 'raw' ? 'raw' : 'gentle'} intensity.`, "next": "dynamic"},
+            {"text": `Softly ask ${pronoun} true feelings with ${riskLevel === 'raw' ? 'edgy' : 'cautious'} care.`, "next": "dynamic"},
+            {"text": `Step back and suggest a private talk with ${riskLevel === 'raw' ? 'fierce' : 'calm'} resolve.`, "next": "dynamic"}
           ];
           break;
-        case 'Pull away and insist on discussing the case evidence first.':
-          narrative = `You step back from ${partner}, demanding to review the evidence. ${subjectPronoun} gaze hardens as you spread the files, the air thick with tension. A shadow moves past the window, unnoticed.`;
+        case 'Stay and review the case file with focused determination.':
+          narrative = `${protagonist} stay behind, flipping open the case file. The details blur as ${protagonistPronoun} think of ${partner}, but a new lead emerges—a name linked to the child’s father.`;
           choices = [
-            {"text": `Analyze the evidence with ${riskLevel === 'raw' ? 'intense' : 'focused'} scrutiny.`, "next": "dynamic"},
-            {"text": `Confront ${partner} about ${pronoun} reaction with ${riskLevel === 'raw' ? 'sharp' : 'firm'} words.`, "next": "dynamic"},
-            {"text": `Check the window for the shadow with ${riskLevel === 'raw' ? 'bold' : 'wary'} eyes.`, "next": "dynamic"}
+            {"text": `Chase the lead with ${riskLevel === 'raw' ? 'intense' : 'focused'} urgency.`, "next": "dynamic"},
+            {"text": `Call ${partner} for input with ${riskLevel === 'raw' ? 'sharp' : 'firm'} tone.`, "next": "dynamic"},
+            {"text": `Pause to reassess with ${riskLevel === 'raw' ? 'bold' : 'wary'} caution.`, "next": "dynamic"}
           ];
           break;
-        case 'Suggest leaving the room to find a safer place to talk.':
-          narrative = `You propose leaving with ${partner}, ${subjectPronoun} nod tinged with reluctance. The hallway looms dark and silent as you step out, the past haunting your steps.`;
+        case 'Leave the precinct to clear [protagonist-name-pronoun] mind.':
+          narrative = `${protagonist} step into the night, the cool air doing little to ease ${protagonistPronoun} thoughts of ${partner}. A shadow moves nearby, hinting at danger.`;
           choices = [
-            {"text": `Lead ${partner} to a hidden alley with ${riskLevel === 'raw' ? 'defiant' : 'bittersweet'} resolve.`, "next": "dynamic"},
-            {"text": `Pause to secure the room before leaving with ${riskLevel === 'raw' ? 'aggressive' : 'careful'} intent.`, "next": "dynamic"},
-            {"text": `Rush forward, seeking safety with ${riskLevel === 'raw' ? 'reckless' : 'desperate'} speed.`, "next": "dynamic"}
+            {"text": `Investigate the shadow with ${riskLevel === 'raw' ? 'defiant' : 'bittersweet'} curiosity.`, "next": "dynamic"},
+            {"text": `Return to the precinct with ${riskLevel === 'raw' ? 'aggressive' : 'careful'} haste.`, "next": "dynamic"},
+            {"text": `Head home with ${riskLevel === 'raw' ? 'reckless' : 'desperate'} intent.`, "next": "dynamic"}
           ];
           break;
       }
