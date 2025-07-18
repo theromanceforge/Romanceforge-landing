@@ -107,7 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (storyContent && choicesDiv) {
     const config = JSON.parse(localStorage.getItem('storyConfig') || '{}');
     let currentNode = sessionStorage.getItem('currentNode') || 'start';
-    renderNode(currentNode, config);
+
+    // Ensure renderNode runs on page load
+    if (!config || Object.keys(config).length === 0) {
+      storyContent.innerHTML = '<p>No story configuration found. Please set up your adventure on the setup page.</p>';
+      choicesDiv.innerHTML = '';
+    } else {
+      renderNode(currentNode, config);
+    }
 
     choicesDiv.addEventListener('click', (event) => {
       if (event.target.tagName === 'BUTTON') {
@@ -193,8 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getPronoun(gender) {
-    if (gender === 'male') return 'his';
-    if (gender === 'female') return 'her';
-    return 'their'; // Default for no-preference
+    switch (gender) {
+      case 'male':
+        return 'his';
+      case 'female':
+        return 'her';
+      case 'no-preference':
+      default:
+        return 'their';
+    }
   }
 });
