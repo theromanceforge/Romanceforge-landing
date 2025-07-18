@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const config = JSON.parse(localStorage.getItem('storyConfig') || '{}');
     let currentNode = sessionStorage.getItem('currentNode') || 'start';
 
-    // Ensure renderNode runs on page load
+    // Immediate render on load with fallback
     if (!config || Object.keys(config).length === 0) {
       storyContent.innerHTML = '<p>No story configuration found. Please set up your adventure on the setup page.</p>';
       choicesDiv.innerHTML = '';
@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.target.tagName === 'BUTTON') {
         const next = event.target.dataset.next;
         sessionStorage.setItem('currentNode', next);
-        renderNode(next, config);
+        choicesDiv.innerHTML = ''; // Clear choices immediately
+        renderNode(next, config); // Render new node without delay
       }
     });
 
@@ -149,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const paragraphs = narrative.split('\n\n');
     storyContent.innerHTML = ''; // Clear previous content
     let index = 0;
+    choicesDiv.style.display = 'none'; // Hide choices initially
 
     function showNextParagraph() {
       if (index < paragraphs.length) {
@@ -159,10 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
         storyContent.appendChild(p);
         setTimeout(() => {
           p.style.opacity = '1';
-        }, 50); // Slight delay for smooth fade
+        }, 50); // Smooth fade-in
         index++;
-        setTimeout(showNextParagraph, 3000); // 3-second delay between paragraphs
+        setTimeout(showNextParagraph, 8000); // 8-second delay between paragraphs
       } else {
+        // Show choices only after all paragraphs are visible
+        choicesDiv.style.display = 'block';
         renderChoices(node.choices);
       }
     }
@@ -176,23 +180,23 @@ document.addEventListener('DOMContentLoaded', () => {
         button.textContent = choice.text;
         button.dataset.next = choice.next;
         button.classList.add('choice-button');
-        button.style.background = 'linear-gradient(90deg, #E63946, #A31B2A)';
+        button.style.background = 'linear-gradient(90deg, #4a1a1a, #8a2b2b)';
         button.style.padding = '1.2rem 2rem';
         button.style.margin = '0.5rem 0';
         button.style.border = 'none';
         button.style.borderRadius = '10px';
-        button.style.color = '#F5E8C7';
+        button.style.color = '#e0c0c0';
         button.style.fontSize = '1.2rem';
         button.style.cursor = 'pointer';
         button.style.transition = 'transform 0.3s, box-shadow 0.3s';
-        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.4)';
         button.onmouseover = () => {
           button.style.transform = 'scale(1.05)';
-          button.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+          button.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.5)';
         };
         button.onmouseout = () => {
           button.style.transform = 'scale(1)';
-          button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+          button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.4)';
         };
         choicesDiv.appendChild(button);
       });

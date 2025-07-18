@@ -2,20 +2,20 @@ body {
   font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
-  background-color: #F5E8C7;
-  color: #6D4C41;
+  background-color: #2f1f1f; /* Darker background */
+  color: #d9b9b9; /* Lighter text for contrast */
   line-height: 1.6;
 }
 
 h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
-  color: #8A4B08;
+  color: #b85a5a; /* Darker red tone */
 }
 
 header {
-  background-color: #6D4C41;
+  background-color: #4a2e2e; /* Darker header */
   padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -27,11 +27,11 @@ nav {
 }
 
 nav .logo {
-  color: #E63946;
+  color: #e06a6a; /* Darker logo color */
   font-size: 1.8rem;
   text-decoration: none;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(230, 57, 70, 0.3);
+  text-shadow: 1px 1px 2px rgba(224, 106, 106, 0.3);
 }
 
 nav ul {
@@ -43,14 +43,14 @@ nav ul {
 }
 
 nav ul li a {
-  color: #F5E8C7;
+  color: #d9b9b9; /* Lighter text */
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s;
 }
 
 nav ul li a:hover {
-  color: #E63946;
+  color: #e06a6a; /* Darker hover color */
 }
 
 .hero {
@@ -59,12 +59,12 @@ nav ul li a:hover {
   padding: 5rem 1rem;
   min-height: 400px;
   overflow: hidden;
-  background: linear-gradient(135deg, #8A4B08, #E63946);
+  background: linear-gradient(135deg, #4a1a1a, #8a2b2b); /* Darker gradient */
 }
 
 .hero-icon {
   font-size: 4rem;
-  color: #F5E8C7;
+  color: #e0c0c0; /* Lighter icon color */
   margin-bottom: 1rem;
   animation: pulse 2s infinite;
 }
@@ -78,20 +78,20 @@ nav ul li a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #F5E8C7;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #e0c0c0; /* Lighter text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 2rem;
-  color: #F5E8C7;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  color: #e0c0c0; /* Lighter text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
-  background-color: #E63946;
-  color: #F5E8C7;
+  background-color: #8a2b2b; /* Darker button */
+  color: #e0c0c0; /* Lighter text */
   padding: 1rem 2rem;
   text-decoration: none;
   border-radius: 8px;
@@ -99,11 +99,11 @@ nav ul li a:hover {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 8px rgba(230, 57, 70, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button:hover {
-  background-color: #A31B2A;
+  background-color: #6a1f1f; /* Even darker hover */
   transform: scale(1.05);
 }
 
@@ -120,10 +120,10 @@ nav ul li a:hover {
 }
 
 .story-card {
-  background-color: #F5E8C7;
+  background-color: #3f2a2a; /* Darker card background */
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
@@ -131,23 +131,23 @@ nav ul li a:hover {
 
 .story-icon {
   font-size: 2.5rem;
-  color: #E63946;
+  color: #e06a6a; /* Darker icon color */
   margin-bottom: 1rem;
 }
 
 .story-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 .story-card h3 {
   margin-top: 0;
-  color: #8A4B08;
+  color: #d9b9b9; /* Lighter text */
   font-size: 1.5rem;
 }
 
 .story-card .tags {
-  color: #E63946;
+  color: #e06a6a; /* Darker tag color */
   font-size: 1rem;
   margin-top: 0.5rem;
 }
@@ -156,13 +156,13 @@ nav ul li a:hover {
   max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #3f2a2a; /* Darker content background */
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .content h1 {
-  color: #2c3e50;
+  color: #d9b9b9; /* Lighter text */
   margin-bottom: 1rem;
 }
 
@@ -175,23 +175,27 @@ nav ul li a:hover {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  color: #d9b9b9; /* Lighter text */
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #6a1f1f; /* Darker border */
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #4a2e2e; /* Darker input background */
+  color: #e0c0c0; /* Lighter text */
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #2c3e50;
-  color: #fff;
+  background-color: #2f1f1f; /* Darker footer */
+  color: #d9b9b9; /* Lighter text */
   margin-top: 2rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -204,17 +208,17 @@ footer {
   width: 100%;
   margin: 0.5rem 0;
   padding: 1.2rem 2rem;
-  background: linear-gradient(90deg, #E63946, #A31B2A);
-  color: #F5E8C7;
+  background: linear-gradient(90deg, #4a1a1a, #8a2b2b); /* Darker gradient */
+  color: #e0c0c0; /* Lighter text */
   border: none;
   border-radius: 10px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
 }
 
 .choice-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker hover shadow */
 }
