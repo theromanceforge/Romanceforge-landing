@@ -1,6 +1,6 @@
 const storyTree = {
   "start": {
-    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\nThe city lay in ruins beneath a gunmetal sky, its jagged skyline pierced by smoke and the distant thunder of artillery.\n\n[protagonist-name] crouched behind a crumbling wall, the weight of a rifle heavy against [protagonist-name-pronoun] shoulder, the air thick with the scent of gunpowder and despair.\n\nThen [partner-name] appeared, emerging from the haze, [partner-gender-pronoun] uniform tattered, [partner-gender-pronoun] face streaked with dirt and resolve.\n\n[partner-name-pronoun] eyes locked with [protagonist-name-pronoun], a flicker of recognition cutting through the war’s chaos.\n\n\"[protagonist-name],\" [partner-name] whispered, voice hoarse, stepping closer despite the danger.\n\n\"I thought you were dead.\"\n\n[protagonist-name] froze, [protagonist-name-pronoun] heart pounding as memories of their last mission flooded back—[partner-name-pronoun] laughter, [partner-gender-pronoun] touch, the love they’d buried under orders.\n\n\"Not yet,\" [protagonist-name] replied, voice tight.\n\n\"But we’re both running out of time.\"\n\n[partner-name] nodded, [partner-gender-pronoun] gaze steady, the unspoken bond between them reigniting amidst the gunfire.\n\nThis reunion was no accident.\n\nA conspiracy loomed, tying their past to the war’s darkest secrets, and [partner-name-pronoun] presence suggested [partner-name-pronoun] knew more than [protagonist-name-pronoun] did.\n\nThe choice was [protagonist-name-pronoun] to make—trust [partner-name] again or face the enemy alone.",
+    "narrative": "Beneath the Gunmetal Sky\n\nChapter One: Reunion Under Fire\n\nThe war-torn city of Valthorne sprawled beneath a gunmetal sky, its once-proud skyline now a jagged ruin pierced by columns of smoke and the relentless thunder of artillery that had raged for three years since the conflict began in 2022.\n\n[protagonist-name], a seasoned soldier and former reconnaissance officer, crouched behind a crumbling wall in the shattered district of Oldtown, the weight of a battered rifle heavy against [protagonist-name-pronoun] shoulder, the air thick with the acrid scent of gunpowder and the despair of a population reduced to shadows.\n\n[protagonist-name] had once led a elite unit, forging bonds of trust and love with [partner-name], [partner-name-pronoun] second-in-command, until a mission to expose a traitor within their ranks went catastrophically wrong, scattering them across the battlefield and burying their romance under the weight of survival.\n\nThen [partner-name] appeared, emerging from the choking haze, [partner-gender-pronoun] uniform tattered and blood-stained, [partner-gender-pronoun] face streaked with dirt and a resolve hardened by years of fighting.\n\n[partner-name-pronoun] eyes locked with [protagonist-name-pronoun], a flicker of recognition cutting through the war’s chaos, rekindling memories of stolen moments amidst the chaos of their last mission in the fall of 2023.\n\n\"[protagonist-name],\" [partner-name] whispered, voice hoarse from shouting orders, stepping closer despite the whistle of bullets overhead.\n\n\"I thought you were dead.\"\n\n[protagonist-name] froze, [protagonist-name-pronoun] heart pounding as memories flooded back—[partner-name-pronoun] laughter echoing in a quiet bunker, [partner-gender-pronoun] gentle touch during a rare ceasefire, the love they’d buried under military orders to protect their unit.\n\n\"Not yet,\" [protagonist-name] replied, voice tight with emotion.\n\n\"But we’re both running out of time, with the enemy closing in and the truth still hidden.\"\n\n[partner-name] nodded, [partner-gender-pronoun] gaze steady, the unspoken bond between them reigniting amidst the staccato of gunfire.\n\nThe air grew heavy as a shell whistled overhead, its explosion shaking the ground, a stark reminder of the peril surrounding them.\n\nThis reunion was no accident, sparked by whispers of a conspiracy tying their past betrayal to the war’s darkest secrets.\n\n[partner-name-pronoun] presence hinted that [partner-name] knew more than [protagonist-name-pronoun] did—perhaps the identity of the traitor who’d doomed their unit.\n\nThe choice was [protagonist-name-pronoun] to make—trust [partner-name] again, risking everything, or face the enemy alone in this desolate warzone.",
     "choices": [
       {"text": "Embrace [partner-name] and rekindle the past with cautious hope.", "next": "dynamic"},
       {"text": "Question [partner-name] about the conspiracy with guarded suspicion.", "next": "dynamic"},
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const choiceText = event.target.textContent;
         sessionStorage.setItem('currentNode', next);
         choicesDiv.innerHTML = ''; // Clear choices immediately
+        console.log('Choice made, moving to node:', next); // Debug log
         generateDynamicNode(next, config, choiceText); // Generate new content
       }
     });
@@ -58,11 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderNode(nodeId, config, storyState) {
     const node = storyTree[nodeId] || { narrative: storyState.narrative || 'No narrative available.', choices: [] };
     let narrative = node.narrative;
+
+    // Replace all partner-related pronouns
+    const partnerGender = config['partner-gender'] || 'no-preference';
+    const partnerPronoun = getSubjectPronoun(partnerGender); // e.g., "he", "she", "they"
+    const partnerGenderPronoun = getPronoun(partnerGender); // e.g., "his", "her", "their"
+    narrative = narrative.replace(/\[partner-gender-pronoun\]/g, partnerGenderPronoun);
+    narrative = narrative.replace(/\[partner-name-pronoun\]/g, partnerPronoun);
+
+    // Replace protagonist-related pronouns
+    const protagonistGender = config['protagonist-gender'] || 'no-preference';
+    const protagonistPronoun = getSubjectPronoun(protagonistGender); // e.g., "he", "she", "they"
     narrative = narrative.replace('[protagonist-name]', config['protagonist-name'] || 'Traveler');
     narrative = narrative.replace('[partner-name]', config['partner-name'] || 'Partner');
-    narrative = narrative.replace('[partner-gender-pronoun]', getPronoun(config['partner-gender'] || 'no-preference'));
-    narrative = narrative.replace('[partner-name-pronoun]', getSubjectPronoun(config['partner-gender'] || 'no-preference'));
-    narrative = narrative.replace('[protagonist-name-pronoun]', getSubjectPronoun(config['protagonist-gender'] || 'no-preference'));
+    narrative = narrative.replace(/\[protagonist-name-pronoun\]/g, protagonistPronoun);
 
     // Split narrative into words for typing effect
     const words = narrative.split(' ');
@@ -135,23 +145,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nodeId === 'dynamic') {
       switch (previousChoice) {
         case 'Embrace [partner-name] and rekindle the past with cautious hope.':
-          narrative = `${protagonistPronoun} pull ${partner} into a tight embrace, the war fading as memories of [protagonist-name-pronoun] past love resurface.\n\n${subjectPronoun} tense, whispering [protagonist-name-pronoun] name, torn between joy and fear.\n\nBut a shell explodes nearby, shattering the moment.`;
+          narrative = `${protagonistPronoun} pull ${partner} into a tight embrace, the war fading as memories of ${protagonistPronoun} past love resurface.\n\n${subjectPronoun} tense, whispering ${protagonistPronoun} name, torn between joy and fear.\n\nBut a shell explodes nearby, shattering the moment.`;
           choices = [
             {"text": `Hold ${partner} tighter with ${riskLevel === 'raw' ? 'fierce' : 'gentle'} resolve.`, "next": "dynamic"},
             {"text": `Push ${partner} to safety with ${riskLevel === 'raw' ? 'urgent' : 'cautious'} care.`, "next": "dynamic"},
-            {"text": `Draw [protagonist-name-pronoun] weapon with ${riskLevel === 'raw' ? 'bold' : 'steady'} intent.`, "next": "dynamic"}
+            {"text": `Draw ${protagonistPronoun} weapon with ${riskLevel === 'raw' ? 'bold' : 'steady'} intent.`, "next": "dynamic"}
           ];
           break;
         case 'Question [partner-name] about the conspiracy with guarded suspicion.':
-          narrative = `${protagonistPronoun} step forward, eyeing ${partner} warily.\n\n\"What do you know about this war?\" ${protagonist} demand, voice low.\n\n${subjectPronoun} hesitate, [partner-gender-pronoun] expression darkening with secrets.`;
+          narrative = `${protagonistPronoun} step forward, eyeing ${partner} warily.\n\n\"What do you know about this war?\" ${protagonist} demand, voice low.\n\n${subjectPronoun} hesitate, ${pronoun} expression darkening with secrets.`;
           choices = [
             {"text": `Press ${partner} harder with ${riskLevel === 'raw' ? 'intense' : 'firm'} scrutiny.`, "next": "dynamic"},
-            {"text": `Wait for [partner-name-pronoun] response with ${riskLevel === 'raw' ? 'edgy' : 'patient'} silence.`, "next": "dynamic"},
+            {"text": `Wait for ${subjectPronoun} response with ${riskLevel === 'raw' ? 'edgy' : 'patient'} silence.`, "next": "dynamic"},
             {"text": `Threaten to leave with ${riskLevel === 'raw' ? 'harsh' : 'calm'} resolve.`, "next": "dynamic"}
           ];
           break;
         case 'Prepare to fight, ignoring [partner-name] to focus on survival.':
-          narrative = `${protagonist} raise [protagonist-name-pronoun] rifle, scanning the ruins.\n\n${partner} call out, but ${protagonistPronoun} block [partner-name-pronoun] out, heart hardened by survival.\n\nEnemy shadows emerge from the smoke.`;
+          narrative = `${protagonist} raise ${protagonistPronoun} rifle, scanning the ruins.\n\n${partner} call out, but ${protagonistPronoun} block ${subjectPronoun} out, heart hardened by survival.\n\nEnemy shadows emerge from the smoke.`;
           choices = [
             {"text": `Engage the enemy with ${riskLevel === 'raw' ? 'reckless' : 'focused'} fury.`, "next": "dynamic"},
             {"text": `Signal ${partner} to join with ${riskLevel === 'raw' ? 'sharp' : 'cautious'} command.`, "next": "dynamic"},
