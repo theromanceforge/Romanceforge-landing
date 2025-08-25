@@ -1,0 +1,3 @@
+git add .
+git commit -m "Add Vercel deployment configuration and story import system"
+git push origin main
